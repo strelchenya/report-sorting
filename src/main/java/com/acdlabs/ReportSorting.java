@@ -18,7 +18,7 @@ public class ReportSorting {
     private static final String WRITE_FILE = "src/main/resources/out.txt";
     private static final String DELIMITER_TAB = "\t";
     private static final String NEW_LINE = "\n";
-    private static final String NUMBERS_MATCHING = "(\\-?\\d*\\.?\\d+)";
+    private static final String NUMBERS_MATCHING = "(-?\\d*\\.?\\d+)";
 
     public static void main(String[] args) {
         List<List<String>> reportLinesSorted = readFileInList();
@@ -41,7 +41,7 @@ public class ReportSorting {
 
     private static void sortLines(List<List<String>> lines) {
         lines.sort(new Comparator<List<String>>() {
-            private Collator collator = Collator.getInstance();
+            private final Collator collator = Collator.getInstance();
 
             @Override
             public int compare(List<String> line1, List<String> line2) {
