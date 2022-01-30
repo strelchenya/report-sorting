@@ -58,18 +58,18 @@ public class ReportSorting {
                     BigDecimal node1 = null;
                     BigDecimal node2 = null;
 
-                    if(nodeString1.matches(NUMBERS_MATCHING)){
+                    if (nodeString1.matches(NUMBERS_MATCHING)) {
                         node1 = new BigDecimal(nodeString1);
                     }
-                    if(nodeString2.matches(NUMBERS_MATCHING)){
+                    if (nodeString2.matches(NUMBERS_MATCHING)) {
                         node2 = new BigDecimal(nodeString2);
                     }
 
-                    int comparison =
-                            (node1 == null ? (node2 == null ? this.collator.compare(nodeString1, nodeString2): 1) :
-                            (node2 == null ? -1 : node1.compareTo(node2)));
-                    if (comparison != 0){
-                        return comparison;
+                    int comparisonValue =
+                            (node1 == null ? (node2 == null ? this.collator.compare(nodeString1, nodeString2) : 1) :
+                                    (node2 == null ? -1 : node1.compareTo(node2)));
+                    if (comparisonValue != 0) {
+                        return comparisonValue;
                     }
                 }
             }
